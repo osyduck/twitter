@@ -16,8 +16,8 @@ function curl($target){
 		$ex = curl_exec($ch);
 		return $ex;
 		}
-$target = "";
-$target = explode(",", $target);
+$target = file_get_contents("target.txt");
+$target = explode("\n", $target);
 //echo "BountyHive Special Bounty".PHP_EOL;
 for($i=0; $i<count($target); $i++){
     $ekse = curl($target[$i]);
