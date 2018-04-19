@@ -18,10 +18,8 @@ function curl($target){
 		}
 $target = file_get_contents("target.txt");
 $target = explode("\n", $target);
-//echo "BountyHive Special Bounty".PHP_EOL;
-for($i=0; $i<count($target); $i++){
-    $ekse = curl($target[$i]);
-    
+for($i=0; $i<=count($target)-1; $i++){
+    $ekse = curl(trim($target[$i]));
     save("loghivespecial.txt", $ekse);
     
     echo $ekse.PHP_EOL;
